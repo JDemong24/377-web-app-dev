@@ -4,14 +4,22 @@
         <title>JavaScript Lesson 2</title>
 
         <script>
+        
+        var prev=(new Date()).getTime();
 
         function run() {
-            var x=5;
-            var y=3;
-            var z=x+y;
+            //get the current time, 
+            //compare to the last click, and display the difference
+            var now=(new Date()).getTime();
 
-            console.log("The value of z is "+z)
+            //set prev to now
+            
 
+            var diff=now-prev;
+
+            console.log(diff);
+
+            prev=now;
         }
 
         </script>
