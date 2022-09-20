@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <style>
+            input{
+                color: green;
+            }
+        </style>
+
+        <script>
+
+            function helloWorld(){
+                var name=document.getElementById("name").value;
+                var hobby=document.getElementById("hobby").value;
+
+                var response="Hello "+name+", I like "+hobby+" too! ";
+                
+
+                //anoying to have lots of alerts
+                //alert(response);
+
+                //better way is to update the DOM
+                document.getElementById("greeting").innerHTML+="<br>"+response;
+            }
+
+        </script>
         <title>Hello World</title>
     </head>
 
@@ -11,5 +34,26 @@
             <li>AP Computer Science Principles</li>
             <li>Web Application Development</li>
         </ul>
+
+        <hr>
+
+        <h1>My First Form</h1>
+
+        <form>
+            What is your name?<br>
+            <input type="text" placeholder="Enter Your Name" size="50" id="name">
+            <br><br>
+            What is your hobby?<br>
+            <input type="text" placeholder="Enter a Hobby" size="50" id="hobby">
+
+            <br><br>
+
+            <input type="button" value="Click Me" onclick="helloWorld()"> 
+        </form>
+
+        &lt;br&gt;
+
+        <h2 id="greeting"></h2>
+
     </body>
 </html>
