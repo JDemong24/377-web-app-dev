@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JavaScript Lesson 9-10</title>
-
+        <title>JavaScript Lesson 9</title>
         <script>
 
-        function makeCar(make,model,mpg,color){
-            var carObject={
-                make:make,
-                model:model,
-                mpg:mpg,
-                color:color
-                displayName: function(){
-                    return make+model+' ('+mpg+' mpg)';
-                }
+        var cars = ['BMW M3', 'Mazda RX-7', 'Tesla Model 3'];
+
+        function showCars() {
+
+            var html = '';
+            for (var i = 0; i < cars.length; i++) {
+                html += '<li>' + cars[i] + '</li>';
             }
 
-            return carObject;
+            document.getElementById('cars').innerHTML = html;
         }
 
-        window.onload=function(){
-
-            var carObject1= makeCar('BMW','M3',23,'White');
-            var carObject2= makeCar('Mazda','CX-9',25,'Blue');
-            var carObject3= makeCar('Honda','Pilot',19,'Black');
-
-            
-            var cars=[carObject1, carObject2, carObject3]
-
-
-    
-            var html='';
-            for(var i=0;i<cars.length;i++){
-                html+= '<li>' + cars[i].displayName() + '</li>';
-            }
-            document.getElementById('cars').innerHTML=html;
-        }
+        //
 
         </script>
     </head>
 
     <body>
 
-        <h1>JavaScript Lesson 9-10</h1>
+        <h1>JavaScript Lesson 9</h1>
+
+        <p>
+            The focus of this lesson is <b>arrays</b>. We will use a loop to print the
+            contents of an array which contains a list of cars.
+        </p>
+
+        <button type="button" onclick="showCars()">Show Cars</button>
 
         <ul id="cars"></ul>
+
+        <hr />
+
+        <h2>Exercise 1</h2>
+
+        <p>
+            Write the HTML and JavaScript code to allow the user to add a car to the
+            existing array. Then call <code>showCars()</code> refresh the list of cars.
+        </p>
+        
+
+        <hr />
+
+        <h2>Exercise 2</h2>
+
+        <p>
+            Write a function to remove every other car in the array. Then call
+            <code>showCars()</code> refresh the list of cars.
+        </p>
+
         
     </body>
 </html>
