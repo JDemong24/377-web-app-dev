@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Lesson 10</title>
+        <script>
+
+        function Car(make, model, year, color) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.color = color;
+        }
+
+        Car.prototype.displayName = function() {
+            return this.make + this.model + ' (' + this.year + ')';
+        };
+
+
+        window.onload = function() {
+            // Use the 'new' keyword to construct the Car objects
+            var carObject1 = new Car('BMW', 'M3', 2018, 'White');
+            var carObject2 = new Car('Mazda', 'CX-9', 2015, 'Blue');
+            var carObject3 = new Car('Tesla', 'Model 3', 2022, 'Green');
+
+            var cars = [ carObject1, carObject2, carObject3 ];
+
+            var html = '';
+            for (var i = 0; i < cars.length; i++) {
+                html += '<li>' + cars[i].displayName() + '</li>';
+            }
+
+            document.getElementById('cars').innerHTML = html;
+        }
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>JavaScript Lesson 10</h1>
+
+        <p>
+            The focus of this lesson is <b>objects</b>. We will use a loop to print the
+            contents of an array which contains a list of car <em>objects</em> instead
+            of plain strings.
+        </p>
+
+        <ul id="cars"></ul>
+    </body>
+</html>
