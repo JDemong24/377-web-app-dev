@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Physics Stuff</title>
+        <title>Velocity Calculator</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -15,7 +15,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Physics Equation Calculator</a>
+              <a class="navbar-brand" href="#">Velocity Calculator</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -39,26 +39,16 @@
             </div>
           </nav>
 
-          <h3>Formula to Find Velocity</h3>
-
+          <h3>Formula to Find Density</h3>
           <form>
-              <span class="label">Distance: </span><input type="text" id="Distance1" name="value1" />
+              <span class="label">Mass: </span><input type="text" id="Mass1" name="value1" />
               <br />
-              <span class="label">Time: </span><input type="text" id="Time1" name="value2" />
+              <span class="label">Length: </span><input type="text" id="Length2" name="value2" />
               <br />
-              <button type="button" onclick="velocity()">Velocity</button>
-              Result: <span id="velocityResult"></span>
+              <button type="button" onclick="density()">Density</button>
+              Result: <span id="densityResult"></span>
               <br>
               <br>
           </form>
-  
-          
-  
-          
-  
-          
-  
-          
-  
-      </body>
-  </html>
+    </body>
+</html>

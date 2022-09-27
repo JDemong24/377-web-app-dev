@@ -4,3 +4,7 @@ span{
 body{
     background-color: aquamarine;
 }
+.label{
+    width: 100px; 
+    display: inline-block;
+}
