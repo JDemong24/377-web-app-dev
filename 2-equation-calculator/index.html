@@ -22,7 +22,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,27 +31,25 @@
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="index.html">Home</a></li>
                       <li><a class="dropdown-item" href="distance.html">Velocity Calculator</a></li>
-                      <li><a class="dropdown-item" href="index.html">Something else here</a></li>
+                      <li><a class="dropdown-item" href="acceleration.html">Acceleration Calculator</a></li>
+                      <li><a class="dropdown-item" href="density.html">Density Calculator</a></li>
+                      <li><a class="dropdown-item" href="area.html">Area Calculator</a></li>
+                      <li><a class="dropdown-item" href="volume.html">Volume Calculator</a></li>
                     </ul>
                 </li>
                 </ul>
               </div>
             </div>
           </nav>
-
-          <h3>Formula to Find Velocity</h3>
-
-          <form>
-              <span class="label">Distance: </span><input type="text" id="Distance1" name="value1" />
-              <br />
-              <span class="label">Time: </span><input type="text" id="Time1" name="value2" />
-              <br />
-              <button type="button" onclick="velocity()">Velocity</button>
-              Result: <span id="velocityResult"></span>
-              <br>
-              <br>
-          </form>
-  
+          <br>
+          <br>
+          <br>
+          <br>
+          <h3>This website is used to calculate some of the most common equations that 
+            appear in physics: velocity, acceleration, area, density, and volume.</h3>
+          <div id="titleimg">
+            <img src="data:image/png;base64,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" id="titleimage">
+          </div>
           
   
           

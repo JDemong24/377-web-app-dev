@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Velocity Calculator</title>
+        <title>Area Calculator</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -15,14 +15,14 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Velocity Calculator</a>
+              <a class="navbar-brand" href="#">Area Calculator</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,14 +31,20 @@
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="index.html">Home</a></li>
                       <li><a class="dropdown-item" href="distance.html">Velocity Calculator</a></li>
-                      <li><a class="dropdown-item" href="index.html">Something else here</a></li>
+                      <li><a class="dropdown-item" href="acceleration.html">Acceleration Calculator</a></li>
+                      <li><a class="dropdown-item" href="density.html">Density Calculator</a></li>
+                      <li><a class="dropdown-item" href="area.html">Area Calculator</a></li>
+                      <li><a class="dropdown-item" href="volume.html">Volume Calculator</a></li>
                     </ul>
                 </li>
                 </ul>
               </div>
             </div>
           </nav>
-
+          <br>
+          <br>
+          <br>
+          <br>
           <h3>Formula to Find Area</h3>
           <form>
               <span class="label">Length: </span><input type="text" id="Length3" name="value1" />
@@ -50,5 +56,8 @@
               <br>
               <br>
           </form>
+          <div id="titleimg">
+            <img src="data:image/png;base64,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" id="titleimage">
+          </div>
     </body>
 </html>

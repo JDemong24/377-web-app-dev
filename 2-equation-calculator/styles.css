@@ -2,9 +2,21 @@ span{
     color: red;
 }
 body{
-    background-color: aquamarine;
+    background-color: cadetblue;
 }
 .label{
     width: 100px; 
     display: inline-block;
+}
+form{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+nav{
+    background-color: darkcyan;
+}
+#titleimg{
+    text-align: center;
 }
