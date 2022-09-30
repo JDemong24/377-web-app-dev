@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVG Lesson 2</title>
+    </head>
+
+    <body>
+
+        <h1>SVG Lesson 2</h1>
+
+        <svg width="500" height="500">
+            <!-- This is a simple rectangle with a default fill of black -->
+            <rect width="200" height="100" />
+
+            <!-- This is a more complex rectangle with a blue fill and red border -->
+            <rect x="0" y="150" width="200" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(255,0,0)" />
+
+            <!-- This is a yellow circle with a green border -->
+            <circle cx="75" cy="350" r="50" stroke="green" stroke-width="4" fill="yellow" />
+
+            <!-- This is a lime-green house with a purple border -->
+            <polygon points="250,250 250,200 300,150 350,200 350,250"
+                     style="fill:lime;stroke:purple;stroke-width:2" />
+
+            <!-- This is some plain text -->
+            <text x="300" y="300">Hello World!</text>
+
+            <!-- This is the same text but colored red and rotated 45 degrees around point 300,300 -->
+            <text x="300" y="300" fill="red" transform="rotate(45 300,300)">Hello World!</text>
+
+            
+        </svg>
+
+
+        <h1>Happy Haloween!</h1>
+        <svg width="500" height="500">
+            <!-- Grass -->
+            <rect x="0" y="320" width="500" height="50" style="fill:rgb(15, 128, 9);stroke-width:3;stroke:rgb(6, 89, 6)" />
+
+            <!-- Stem -->
+            <rect x="240" y="120" width="20" height="30" style="fill:rgb(15, 128, 9);stroke-width:3;stroke:rgb(6, 89, 6)" />
+
+            <!-- Body of Jack'o'lantern -->
+            <circle cx="250" cy="250" r="100" stroke="darkorange" stroke-width="4" fill="orange" />
+            
+            <!-- Eye No. 1 -->
+            <polygon points="190,200 210,235 230,200"/>
+
+            <!-- Eye No. 2 -->
+            <polygon points="275,200 295,235 315,200"/>
+
+            <!-- Nose -->
+            <polygon points="230,275 252,235 275,275"/>
+
+            <!-- Mouth -->
+            <circle cx="250" cy="310" r="15"/>
+        </svg>
+
+    </body>
+</html>
