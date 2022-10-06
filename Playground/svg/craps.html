@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Craps Game</title>
+        <script>
+            function alloff(){
+                $(dot1).attr("visibility","hidden");
+                $(dot2).attr("visibility","hidden");
+                $(dot3).attr("visibility","hidden");
+                $(dot4).attr("visibility","hidden");
+                $(dot5).attr("visibility","hidden");
+                $(dot6).attr("visibility","hidden");
+                $(dot7).attr("visibility","hidden");
+            }
+            $(document).ready(function(){
+                alloff();
+            });
+            function rollDie(){
+                var num=Math.floor(Math.random()*6+1);
+                alloff();
+                if(num==1){
+                    $(dot1).attr("visibility","visible");
+                }else if(num==2){
+                    $(dot4).attr("visibility","visible");
+                    $(dot7).attr("visibility","visible");
+                }else if(num==3){
+                    $(dot4).attr("visibility","visible");
+                    $(dot7).attr("visibility","visible");
+                    $(dot1).attr("visibility","visible");
+                }else if(num==4){
+                    $(dot4).attr("visibility","visible");
+                    $(dot7).attr("visibility","visible");
+                    $(dot6).attr("visibility","visible");
+                    $(dot5).attr("visibility","visible");
+                }else if(num==5){
+                    $(dot4).attr("visibility","visible");
+                    $(dot7).attr("visibility","visible");
+                    $(dot6).attr("visibility","visible");
+                    $(dot5).attr("visibility","visible");
+                    $(dot1).attr("visibility","visible");
+                }else{
+                    $(dot2).attr("visibility","visible");
+                    $(dot3).attr("visibility","visible");
+                    $(dot4).attr("visibility","visible");
+                    $(dot5).attr("visibility","visible");
+                    $(dot6).attr("visibility","visible");
+                    $(dot7).attr("visibility","visible");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <svg id="craps" viewBox="0 0 900 500" style="background-color: green;">
+            <rect id="dice1body" stroke="black" fill="white" x="100" y="100" width="100" height="100" />
+            <circle id="dot1" stroke="black" fill="black" cx="150" cy="150" r="10" />
+            <circle id="dot2" stroke="black" fill="black" cx="115" cy="150" r="10" />
+            <circle id="dot3" stroke="black" fill="black" cx="185" cy="150" r="10" />
+            <circle id="dot4" stroke="black" fill="black" cx="115" cy="185" r="10" />
+            <circle id="dot5" stroke="black" fill="black" cx="185" cy="185" r="10" />
+            <circle id="dot6" stroke="black" fill="black" cx="115" cy="115" r="10" />
+            <circle id="dot7" stroke="black" fill="black" cx="185" cy="115" r="10" />
+        </svg>
+        <button onclick="rollDie()">button</button>
+
+    </body>
+</html>
