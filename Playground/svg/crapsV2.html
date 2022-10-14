@@ -12,6 +12,36 @@
             var minBet=5;
             var maxBet=money;
             var playagain;
+            function bankrupt(){
+                while(money<5){
+                    userinput=alert("Try Working Harder");
+                }
+            }
+            function betting(){
+                userinput=parseInt(prompt("enter a bet:"));
+                while(!(userinput>=5 && userinput<=money)){
+                    userinput=parseInt(prompt("enter a bet:"));
+                }
+            }
+            function playAgainWin(){
+                playagain=prompt("You Won! Would you like to play again?, Your money is: "+money);
+                if(playagain=="yes"){
+                    userinput=parseInt(prompt("enter a bet:"));
+                    while(!(userinput>=5 && userinput<=money)){
+                        userinput=parseInt(prompt("enter a bet:"));
+                    }
+                }
+            }
+            function playAgainLose(){
+                bankrupt();
+                playagain=prompt("You Lost! Would you like to play again?, Your money is: "+money);
+                if(playagain=="yes"){
+                    userinput=parseInt(prompt("enter a bet:"));
+                    while(!(userinput>=5 && userinput<=money)){
+                        userinput=parseInt(prompt("enter a bet:"));
+                    }
+                }
+            }
             function alloff(){
                 $(dot1).attr("visibility","hidden");
                 $(dot2).attr("visibility","hidden");
@@ -34,10 +64,7 @@
 
             $(document).ready(function(){
                 $("#money").text("your money: "+money);
-                userinput=parseInt(prompt("enter a bet:"));
-                while(!(userinput>=5 && userinput<=money)){
-                    userinput=parseInt(prompt("enter a bet:"));
-                }
+                betting();
             });
             function rollDie1(){
                 $("#money").text("your money: "+money);
@@ -107,24 +134,13 @@
                         $("#txt").text("You Win!");
                         point=0;
                         money=money+userinput;
-                        playagain=prompt("You Won! Would you like to play again?, Your money is: "+money);
-                        if(playagain=="yes"){
-                            userinput=parseInt(prompt("enter a bet:"));
-                            while(!(userinput>=5 && userinput<=money)){
-                                userinput=parseInt(prompt("enter a bet:"));
-                            }
-                        }
+                        playAgainWin();
                     }else if(total==2||total==3||total==12){
                         $("#txt").text("You Lose!");
                         point=0;
                         money=money-userinput;
-                        playagain=prompt("You Lost! Would you like to play again?, Your money is: "+money);
-                        if(playagain=="yes"){
-                            userinput=parseInt(prompt("enter a bet:"));
-                            while(!(userinput>=5 && userinput<=money)){
-                                userinput=parseInt(prompt("enter a bet:"));
-                            }
-                        }
+                        bankrupt();
+                        playAgainLose();
                     }else{
                         $("#txt").text("Make Your Second Roll");
                         point=total;
@@ -135,24 +151,14 @@
                         $("#txt").text("You Win!");
                         point=0;
                         money=money+userinput;
-                        playagain=prompt("You Won! Would you like to play again?, Your money is: "+money);
-                        if(playagain=="yes"){
-                            userinput=parseInt(prompt("enter a bet:"));
-                            while(!(userinput>=5 && userinput<=money)){
-                                userinput=parseInt(prompt("enter a bet:"));
-                            }
-                        }
+                        playAgainWin();
                     }else if(total==7){
                         $("#txt").text("You Lose!");
                         point=0;
                         money=money-userinput;
                         playagain=prompt("You Lost! Would you like to play again?, Your money is: "+money);
-                        if(playagain=="yes"){
-                            userinput=parseInt(prompt("enter a bet:"));
-                            while(!(userinput>=5 && userinput<=money)){
-                                userinput=parseInt(prompt("enter a bet:"));
-                            }
-                        }
+                        bankrupt();
+                        playAgainLose();
                     }else{
                         $("#txt").text("Roll Again");
                     }
