@@ -1,3 +1,11 @@
 #DiceGame{
     background-color: green;
 }
+
+#image{
+    margin-top: -400px;
+}
+
+#txt{
+    text-align: center;
+}

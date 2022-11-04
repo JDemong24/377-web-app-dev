@@ -4,38 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="scripts.js"></script>
     <title>Dice Game</title>
 </head>
 <body>
     <svg id="DiceGame" viewBox="0 0 900 400">
+        <circle id="speech"stroke="black" fill="white" cx="130" cy="120" r="150" />
+
+        <text x="700" y="100" id="p1lives">Player 1: 6 Lives</text>
+        <text x="700" y="150" id="p2lives">Player 2: 6 Lives</text>
+        <text x="20" y="30" class="startMessage">How to play: Roll the set dice first, </text>
+        <text x="10" y="50" class="startMessage"> then player one rolls their dice and </text>
+        <text x="0" y="70" class="startMessage">player two rolls their dice. If the number </text>
+        <text x="0" y="90" class="startMessage">on your dice matches the set dice number,</text>
+        <text x="0" y="110" class="startMessage"> your lives stay the same; if the number on </text>
+        <text x="0" y="130" class="startMessage">your dice does not match the set dice, you </text>
+        <text x="0" y="150" class="startMessage">lose one life; if the number on your dice is</text>
+        <text x="0" y="170" class="startMessage"> 1/2 of the set dice, you gain one life.</text>
+
+
         <rect id="player2Dice" stroke="black" fill="white" x="250" y="280" width="100" height="100" />
-        <circle id="dot1" stroke="black" fill="black" cx="275" cy="330" r="10" />
-        <circle id="dot2" stroke="black" fill="black" cx="115" cy="150" r="10" />
-        <circle id="dot3" stroke="black" fill="black" cx="185" cy="150" r="10" />
-        <circle id="dot4" stroke="black" fill="black" cx="115" cy="185" r="10" />
-        <circle id="dot5" stroke="black" fill="black" cx="185" cy="185" r="10" />
-        <circle id="dot6" stroke="black" fill="black" cx="115" cy="115" r="10" />
-        <circle id="dot7" stroke="black" fill="black" cx="185" cy="115" r="10" />
+        <circle id="dot1" class="dot p1" stroke="black" fill="black" cx="300" cy="330" r="10" />
+        <circle id="dot2" class="dot p1" stroke="black" fill="black" cx="270" cy="330" r="10" />
+        <circle id="dot3" class="dot p1" stroke="black" fill="black" cx="330" cy="330" r="10" />
+        <circle id="dot4" class="dot p1" stroke="black" fill="black" cx="270" cy="360" r="10" />
+        <circle id="dot5" class="dot p1" stroke="black" fill="black" cx="330" cy="360" r="10" />
+        <circle id="dot6" class="dot p1" stroke="black" fill="black" cx="270" cy="300" r="10" />
+        <circle id="dot7" class="dot p1" stroke="black" fill="black" cx="330" cy="300" r="10" />
 
         <rect id="player1Dice" stroke="black" fill="white" x="550" y="280" width="100" height="100" />
-        <circle id="dot12" stroke="black" fill="black" cx="450" cy="150" r="10" />
-        <circle id="dot22" stroke="black" fill="black" cx="415" cy="150" r="10" />
-        <circle id="dot32" stroke="black" fill="black" cx="485" cy="150" r="10" />
-        <circle id="dot42" stroke="black" fill="black" cx="415" cy="185" r="10" />
-        <circle id="dot52" stroke="black" fill="black" cx="485" cy="185" r="10" />
-        <circle id="dot62" stroke="black" fill="black" cx="415" cy="115" r="10" />
-        <circle id="dot72" stroke="black" fill="black" cx="485" cy="115" r="10" />
+        <circle id="dot12" class="dot p2" stroke="black" fill="black" cx="600" cy="330" r="10" />
+        <circle id="dot22" class="dot p2" stroke="black" fill="black" cx="570" cy="330" r="10" />
+        <circle id="dot32" class="dot p2" stroke="black" fill="black" cx="630" cy="330" r="10" />
+        <circle id="dot42" class="dot p2" stroke="black" fill="black" cx="570" cy="360" r="10" />
+        <circle id="dot52" class="dot p2" stroke="black" fill="black" cx="630" cy="360" r="10" />
+        <circle id="dot62" class="dot p2" stroke="black" fill="black" cx="570" cy="300" r="10" />
+        <circle id="dot72" class="dot p2" stroke="black" fill="black" cx="630" cy="300" r="10" />
 
-        <rect id="player1Dice" stroke="black" fill="white" x="550" y="280" width="100" height="100" />
-        <circle id="dot12" stroke="black" fill="black" cx="450" cy="150" r="10" />
-        <circle id="dot22" stroke="black" fill="black" cx="415" cy="150" r="10" />
-        <circle id="dot32" stroke="black" fill="black" cx="485" cy="150" r="10" />
-        <circle id="dot42" stroke="black" fill="black" cx="415" cy="185" r="10" />
-        <circle id="dot52" stroke="black" fill="black" cx="485" cy="185" r="10" />
-        <circle id="dot62" stroke="black" fill="black" cx="415" cy="115" r="10" />
-        <circle id="dot72" stroke="black" fill="black" cx="485" cy="115" r="10" />
+        <rect id="deciderDice" stroke="black" fill="white" x="400" y="50" width="100" height="100" />
+        <circle id="dot13" class="dot dec" stroke="black" fill="black" cx="450" cy="100" r="10" />
+        <circle id="dot23" class="dot dec" stroke="black" fill="black" cx="415" cy="100" r="10" />
+        <circle id="dot33" class="dot dec" stroke="black" fill="black" cx="485" cy="100" r="10" />
+        <circle id="dot43" class="dot dec" stroke="black" fill="black" cx="415" cy="130" r="10" />
+        <circle id="dot53" class="dot dec" stroke="black" fill="black" cx="485" cy="130" r="10" />
+        <circle id="dot63" class="dot dec" stroke="black" fill="black" cx="415" cy="70" r="10" />
+        <circle id="dot73" class="dot dec" stroke="black" fill="black" cx="485" cy="70" r="10" />
     </svg>
+    <img src="Subject.PNG" id="image" x="100" y="100" width="150"></img>
+    <button onclick="deciderDice()">Set Dice</button>
+    <button onclick="player1Roll()">Player 1 Dice</button>
+    <button onclick="player2Roll()">Player 2 Dice</button>
 </body>
 </html>
