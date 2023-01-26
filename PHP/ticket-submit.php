@@ -13,9 +13,35 @@
 
     <?php
     extract($_REQUEST);
-    echo "<h3>Problem: $problem</h3>";
-    echo "<h3>Priority: $priority</h3>";
-    echo "<h3>Contact Email: $contactEmail</h3>";
+    
+
+
+
+    $servername="localhost";
+    $username="root";
+    $password="";
+    $dbname="helpdesk";
+
+    // connecting to database and checking connection
+    $conn=new mysqli($servername, $username, $password, $dbname);
+    if($conn->connect_error){
+        die("connection failed: ".$conn->connect_error);
+    }
+
+
+    // sanitization(Prevents SQL injection exploits)
+    $problem=$conn->real_escape_string($problem);
+    $contactEmail=$conn->real_escape_string($contactEmail);
+
+    // Build Insert Statement
+    $sql="INSERT INTO tickets(tkt_problem, tkt_priority, tkt_contact_email)" .
+    "VALUES ('$problem', $priority, '$contactEmail')";
+
+    echo $sql;
+
+    $conn->query($sql)
+
+
     ?>
     <a href="ticket-form.php">Back to the Ticket Form</a>
     
