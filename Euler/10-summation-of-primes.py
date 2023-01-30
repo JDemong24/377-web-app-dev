@@ -1,15 +1,15 @@
+import math
+def checkPrime(num):
+    for i in range(2,int(math.sqrt(num))+1):
+        if (num%i==0):
+            return False
+    return True
 def pt10():
-    total=2000000
-    counter=0
-    num=2
     count=0
-    while counter<10:
-        for i in range(2,10):
-            if num%i != 0:
-                count=count+num
-            else:
-                num=num+1
-        counter=counter+1
+    for i in range(2,2_000_000):
+        if(checkPrime(i)):
+            count=count+i
+
     print(count)
 
 pt10()
