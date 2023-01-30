@@ -1,4 +1,4 @@
-##  and a^2 + b^2 != c^2
+
 import time
 start=time.time()
 
