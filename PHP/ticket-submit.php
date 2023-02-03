@@ -1,6 +1,11 @@
+<?php
+include('library.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,20 +19,7 @@
     <?php
     extract($_REQUEST);
     
-
-
-
-    $servername="localhost";
-    $username="root";
-    $password="";
-    $dbname="helpdesk";
-
-    // connecting to database and checking connection
-    $conn=new mysqli($servername, $username, $password, $dbname);
-    if($conn->connect_error){
-        die("connection failed: ".$conn->connect_error);
-    }
-
+    $conn=get_database_connection();
 
     // sanitization(Prevents SQL injection exploits)
     $problem=$conn->real_escape_string($problem);
@@ -43,7 +35,10 @@
 
 
     ?>
+    <br>
     <a href="ticket-form.php">Back to the Ticket Form</a>
+    <br>
+    <a href="ticket-list.php" class="ticketListSender">To the Ticket List</a>
     
 </body>
 </html>
