@@ -32,7 +32,7 @@ function get_database_connection()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "password";
+    $password = "390-9076";
     $dbname = "helpdesk";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
