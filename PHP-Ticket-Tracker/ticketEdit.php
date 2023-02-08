@@ -27,6 +27,7 @@ include('library.php');
     ?>
 
     <form action='ticket-submit.php' method='POST'>
+        <input type="hidden"name="id"value="<?php echo $row['tkt_id'];?>"
         <span class="label">Problem: </span><input type="text" id="problem" name="problem" value="<?php echo $row['tkt_problem'];?>" />
         <br>
         <br>

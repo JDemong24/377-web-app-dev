@@ -54,7 +54,7 @@ include('library.php');
                 echo "<td>".$row['tkt_resolution']."</td>";
                 echo "<td>";
                 echo "<a href='ticketEdit.php?id=".$row['tkt_id']."' title='Edit this ticket'><i class='fa fa-pencil' aria-hidden='true'></i></a>  ";
-                echo "<a onclick='deleteTicket(".$row['tkt_id']."'title='Delete this ticket'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+                echo "<a href='ticketDelete.php?id=".$row['tkt_id']."'title='Delete this ticket'><i class='fa fa-trash' aria-hidden='true'></i></a>";
                 echo "</td>";
                 echo "<tr>";
             }
