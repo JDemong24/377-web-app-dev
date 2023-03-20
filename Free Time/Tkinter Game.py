@@ -11,6 +11,7 @@
 from random import randrange  
 from tkinter import *
 from tkinter import ttk
+from tkinter.ttk import *
 
 root = Tk()
 
@@ -22,8 +23,6 @@ boxSize.pack()
 def check():
     print("Checked!")
     return check
-
-ttk.Label(boxSize,text=check).grid(column=1, row=5)
 
 
 ttk.Label(boxSize, text="Click to Quit").grid(column=0, row=0)
@@ -55,13 +54,10 @@ def ai():
     return computerChoice
 
 
-
 ai()
-ttk.Label(boxSize, text=ai).grid(column=5, row=0)
 ttk.Button(root, text='Rock', command=lambda: player1('Rock')).pack()
 ttk.Button(root, text='Paper',command=lambda: player1('Paper')).pack()
 ttk.Button(root, text='Scissors', command=lambda: player1('Scissors')).pack()
-
 
 
 
